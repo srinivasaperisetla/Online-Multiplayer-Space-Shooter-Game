@@ -5,8 +5,8 @@ addEventListener('click', (event) => {
     }
 
     const angle = Math.atan2(
-        (event.clientY * window.devicePixelRatio) - playerPosition.y, 
-        (event.clientX * window.devicePixelRatio) - playerPosition.x
+        (event.clientY) - playerPosition.y, 
+        (event.clientX) - playerPosition.x
     );
 
     // const velocity = {
