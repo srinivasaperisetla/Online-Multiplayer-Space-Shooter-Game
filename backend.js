@@ -152,8 +152,11 @@ setInterval(() => {
           backEndPlayers[backEndProjectiles[id].playerId].score++
 
         console.log(backEndPlayers[backEndProjectiles[id].playerId])
-        delete backEndProjectiles[id]
-        delete backEndPlayers[playerId]
+
+        backEndPlayers[playerId].x = 1024 * Math.random()
+        backEndPlayers[playerId].y = 576 * Math.random()
+        // delete backEndProjectiles[id]
+        // delete backEndPlayers[playerId]
         break
       }
     }
