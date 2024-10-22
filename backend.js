@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 const backEndPlayers = {}
 const backEndProjectiles = {}
 
-const SPEED = 5
+const SPEED = 3
 const RADIUS = 10
 const PROJECTILE_RADIUS = 5
 let projectileId = 0
@@ -32,8 +32,8 @@ io.on('connection', (socket) => {
     projectileId++
 
     const velocity = {
-      x: Math.cos(angle) * 5,
-      y: Math.sin(angle) * 5
+      x: Math.cos(angle) * 7,
+      y: Math.sin(angle) * 7
     }
 
     backEndProjectiles[projectileId] = {
@@ -155,7 +155,7 @@ setInterval(() => {
 
         backEndPlayers[playerId].x = 1024 * Math.random()
         backEndPlayers[playerId].y = 576 * Math.random()
-        // delete backEndProjectiles[id]
+        delete backEndProjectiles[id]
         // delete backEndPlayers[playerId]
         break
       }

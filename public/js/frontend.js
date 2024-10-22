@@ -106,14 +106,15 @@ socket.on('updatePlayers', (backEndPlayers) => {
           frontEndPlayers[id].target.x += input.dx
           frontEndPlayers[id].target.y += input.dy
         })
-      } else {
-        gsap.to(frontEndPlayers[id], {
-          x: backEndPlayer.x,
-          y: backEndPlayer.y,
-          duration: 0.015,
-          ease: 'linear'
-        })
-      }
+      } 
+      // else {
+      //   gsap.to(frontEndPlayers[id], 
+      //     x: backEndPlayer.x,
+      //     y: backEndPlayer.y,
+      //     duration: 0.015,
+      //     ease: 'linear'
+      //   })
+      // }
     }
   }
 
@@ -135,7 +136,7 @@ socket.on('updatePlayers', (backEndPlayers) => {
 let animationId
 function animate() {
   animationId = requestAnimationFrame(animate)
-  c.fillStyle = 'rgba(0, 0, 0, 0.1)'
+  c.fillStyle = 'rgba(0, 0, 0, 0.3)'
   c.fillRect(0, 0, canvas.width, canvas.height)
 
   for (const id in frontEndPlayers) {
@@ -180,7 +181,7 @@ const keys = {
   }
 }
 
-const SPEED = 5
+const SPEED = 3
 const playerInputs = []
 let sequenceNumber = 0
 setInterval(() => {
